@@ -10,3 +10,12 @@
     border-radius: 7px ;
  
 }
+.subs{
+    margin-left:130px;
+}
+.row{
+display: flex;
+justify-content: center;
+justify-content: space-around;
+top: 25px;
+}
