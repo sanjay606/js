@@ -1,23 +1,33 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import ImageCard2 from './ImageCard2';
+import NavbarComp from './NavbarComp';
+import './ImageCard2.css';
+import datas from './datas';
 
-function App() {
+
+
+const nCard=(val)=>{
+return (
+  <ImageCard2
+  key={val.id}
+  imgsrc={val.url}
+  title={val.title}
+  desc={val.desc}
+  />
+);
+}
+
+
+function App() { 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+    <NavbarComp/>
+    <h1 className='text-center'>Card</h1>
+      <div className='row'>
+           {datas.map((nCard))}
+           
+      </div>
     </div>
   );
 }
