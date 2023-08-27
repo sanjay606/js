@@ -1,32 +1,50 @@
-// import logo from './logo.svg';
+
 import './App.css';
 import ImageCard2 from './ImageCard2';
 import NavbarComp from './NavbarComp';
 import './ImageCard2.css';
-import datas from './datas';
-
-
+// import datas from './datas';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 const nCard=(val)=>{
-return (
-  <ImageCard2
-  key={val.id}
-  imgsrc={val.url}
-  title={val.title}
-  desc={val.desc}
-  />
-);
-}
+  return (
+    <ImageCard2
+    key={val.id}
+    imgsrc={val.image}
+    title={val.title}
+    desc={val.price}
+    />
+  );
+  }
 
 
-function App() { 
+function App(){
+  const [data,SetData] = useState([]);
+  useEffect(() =>{
+    const fetchData = async () =>{
+      try{
+        const response = await fetch('https://fakestoreapi.com/products');
+        const data = await response.json();
+        SetData(data);
+      }
+      
+        catch(error)
+        {
+          console.log('Error Occured',error);
+        }
+        
+        
+      };
+      fetchData();
+    },[]);
+
   return (
     <div className='container'>
     <NavbarComp/>
     <h1 className='text-center'>Card</h1>
       <div className='row'>
-           {datas.map((nCard))}
-           
+           {data.map((nCard))}
       </div>
     </div>
   );
