@@ -11,7 +11,7 @@ const datas=
       "albumId": 1,
       "id": 2,
       "title": "Noise Twist Bluetooth Calling Smart Watch with 1.38",
-      "url": "https://m.media-amazon.com/images/I/61yhPPcmesL._AC_UL600_FMwebp_QL65_.jpg",
+      "url": "https://m.media-amazon.com/images/I/61xXm6kS-hL._AC_UL600_FMwebp_QL65_.jpg",
       "thumbnailUrl": "https://via.placeholder.com/150/771796"
   },
   {
